@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 class CardActions extends React.Component {
   handleClick = (e) => {
@@ -15,7 +16,14 @@ class CardActions extends React.Component {
         <h2>Actions</h2>
         <ul>
           <li className="move-button"><i className="forward-icon sm-icon"></i>Move</li>
-          <li className="copy-button"><i className="card-icon sm-icon"></i>Copy</li>
+          <li
+            className="copy-button"
+            onClick={this.props.onCopyClick}
+            data-action-type='copy-card'
+            data-offset={-70}
+          >
+            <i className="card-icon sm-icon"></i>Copy
+          </li>
           <li className="subscribe-button"><i className="sub-icon sm-icon"></i>Subscribe<i className="check-icon sm-icon"></i>
           </li>
           <hr />

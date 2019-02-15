@@ -23,7 +23,7 @@ class CardSidebarContainer extends React.Component {
     const $target = $(e.target);
     let pos = $target.offset();
     pos = Object.assign({}, pos, {
-      top: pos.top + 33
+      top: pos.top + Number(e.target.dataset.offset)
     });
 
     this.setState({popOverVisible: true});
@@ -49,6 +49,7 @@ class CardSidebarContainer extends React.Component {
             className="label-button"
             onClick={this.handleClick}
             data-action-type='labels'
+            data-offset={33}
           >
             <i className="label-icon sm-icon"></i>
             Labels
@@ -58,6 +59,7 @@ class CardSidebarContainer extends React.Component {
             className="date-button"
             onClick={this.handleClick}
             data-action-type='due-date'
+            data-offset={33}
           >
             <i className="clock-icon sm-icon"></i>
             Due Date
