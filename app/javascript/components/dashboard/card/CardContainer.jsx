@@ -28,8 +28,9 @@ class CardContainer extends React.Component {
   componentDidMount() {
     const id = Number(this.props.match.params.id);
     const store = this.context.store;
+    const card = store.getState().cards.find(card => card.id === id);
 
-    store.dispatch(actions.fetchCard(id));
+    if (!card) store.dispatch(actions.fetchCard(id));
   }
 
   getChild = (type) => {
