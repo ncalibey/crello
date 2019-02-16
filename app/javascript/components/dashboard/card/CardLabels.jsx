@@ -5,7 +5,7 @@ class CardLabels extends React.Component {
   render() {
     const card = this.props.card;
     const labels = card.labels.map((label, i) => (
-      <div className="member-container">
+      <div className="member-container" key={i}>
         <div className={`${label} label colorblindable`}></div>
       </div>
     ));
