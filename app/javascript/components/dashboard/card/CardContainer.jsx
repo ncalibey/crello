@@ -9,6 +9,7 @@ import CardSidebarContainer from './CardSidebarContainer';
 import PopOver from './PopOver';
 import DueDate from './DueDate';
 import Labels from './Labels';
+import CopyCard from './CopyCard';
 
 class CardContainer extends React.Component {
   static contextTypes = {
@@ -54,6 +55,13 @@ class CardContainer extends React.Component {
             cardId={card.id}
             dueDate={card.due_date}
             onLabelsSubmit={this.handleSubmit}
+          />
+        )
+      case 'copy-card':
+        return (
+          <CopyCard
+            onCloseClick={this.handlePopOverCloseClick}
+            card={card}
           />
         )
       default:
