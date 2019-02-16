@@ -14,7 +14,7 @@ class CardsContainer extends React.Component {
     const cardComponents = cards.map(card => (
       <Link
         to={`/cards/${card.id}`}
-        key={card.id * 200}
+        key={card.id * id}
       >
         <CardTile
           key={card.id}
