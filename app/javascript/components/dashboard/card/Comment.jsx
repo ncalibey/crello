@@ -27,7 +27,7 @@ class Comment extends React.Component {
             <textarea
               required=""
               rows="1"
-              value={comment.text}
+              defaultValue={comment.text}
             >
             </textarea>
             <div>
